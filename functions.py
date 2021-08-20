@@ -4,8 +4,8 @@ import pandas as pd
 #random generator
 rg = np.random.default_rng()
 
-#FIRST DEFINITIOS OF ALL NEEDED FUNCTIONS
-##function to generate ramdon data, base on custom features
+#FIRST DEFINITIONS OF ALL NEEDED FUNCTIONS
+##function to generate ramdon data, based on custom features
 def generate_data(n_features, n_values):
     features = rg.random((n_features, n_values))
     weights = rg.random((1, n_values))[0] #this is necesary because return a bidimensional array
@@ -14,7 +14,7 @@ def generate_data(n_features, n_values):
     data["targets"] = targets
     return data, weights
 
-#basically the sum of a line ecuation, where line is y = mx +y
+#basically the sum of a line ecuation, where line is y = mx + b
 def get_weighted_sum(feature, weights, bias):
     return np.dot(feature, weights) + bias
 
