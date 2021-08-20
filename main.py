@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-#import matplotlib
-#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 #import of functions.py
@@ -46,5 +44,4 @@ train_model(data, weights, bias, l_rate, epochs)
 #Plot the average loss usin pandas and save plot as PDF file
 df = pd.DataFrame(epoch_loss)
 df_plot = df.plot(kind="line", grid=True).get_figure()
-#df.plot(kind="line", grid=True).get_figure()
 df_plot.savefig("Training_loss.pdf")
