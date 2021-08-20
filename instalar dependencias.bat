@@ -5,7 +5,7 @@ cd /d %~dp0
 cd %
 
 @echo on
-pip3 install requests
+echo pip3 install requests
 pip3 install pandas
 echo en caso de repetir instalacion pip3 uninstall matplotlib
 python3 -m pip install --upgrade pip
