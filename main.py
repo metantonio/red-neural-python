@@ -37,6 +37,7 @@ def train_model(data, weights, bias, l_rate, epochs):
         print("********************************")
         print("epoch: ", e)
         print("loss: ", average_loss)
+        print("updated weights: ", weights)
 
 #Running train model
 train_model(data, weights, bias, l_rate, epochs)

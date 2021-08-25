@@ -12,7 +12,8 @@ def generate_data(n_features, n_values):
     targets = np.random.choice([0,1], n_features)
     data = pd.DataFrame(features, columns=["x0", "x1", "x2"])
     data["targets"] = targets
-    print("data y target \n", data)
+    print("\n initial data: \n", data)
+    print("\n initial weights \n", weights)
     return data, weights
 
 #basically the sum of a line ecuation, where line is y = mx + b
