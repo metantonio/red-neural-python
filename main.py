@@ -63,7 +63,7 @@ elif (user==2):
         result = evaluation_neuronal(example, bias, weights)
         print("\n If new data is: ",example)
         print("\n Output of neuronal network should be: ", result)
-        user = int(input("\n Cotinuing training?: Press 2 \n Stop: Press 1 \n"))
+        user = int(input("\n Cotinuing training?: Press 2 \n Stop Training and Generate PDF: Press 1 \n"))
         
 else:
     print("\n wrong option")
