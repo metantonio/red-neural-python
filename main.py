@@ -3,16 +3,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #import of functions.py
-from functions import generate_data, get_weighted_sum, sigmoid, cross_entropy, update_weights, update_bias
+from functions import generate_data, example_data, get_weighted_sum, sigmoid, cross_entropy, update_weights, update_bias
 
 #definition of bias, learning rate, and epochs to run
 bias = 0.5
 l_rate=0.01
-epochs = 20
+epochs = 40
 epoch_loss=[]
 
+#definition of data set lenght and number of layers
+n_layers=3 #number of layers of input data (x1, x2, x3, ... xn)
+n_data=50 #number or lenght of input data set
+
 #definition of data and weights at beggining to start iterations
-data, weights = generate_data(50,3)
+data, weights = generate_data(n_data, n_layers)
 
 #Definitions of the train model that will import all functions from functions.py
 def train_model(data, weights, bias, l_rate, epochs):
@@ -39,9 +43,21 @@ def train_model(data, weights, bias, l_rate, epochs):
         print("loss: ", average_loss)
         print("updated weights: ", weights)
 
-#Running train model
-train_model(data, weights, bias, l_rate, epochs)
-
+#Running user interface and train model
+print("\n Press 1 to generate dataset and target randomly \n Press 2 to run example \n")
+user = int(input())
+if (user==1):
+    print("Option 1: random dataset \n")
+    data, weights = generate_data(n_data, n_layers)
+    print("\n initial data: \n", data)
+    print("\n initial weights \n", weights)
+    train_model(data, weights, bias, l_rate, epochs)
+elif (user==2):
+    print("Option 2: Example \n")
+    data, weights = example_data()
+    train_model(data, weights, bias, l_rate, epochs)
+else:
+    print("wrong option")
 #Plot the average loss usin pandas and save plot as PDF file
 df = pd.DataFrame(epoch_loss)
 df_plot = df.plot(kind="line", grid=True).get_figure()
