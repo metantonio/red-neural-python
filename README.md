@@ -31,7 +31,7 @@ python3 main.py
 
 ## Explicación Conceptual del perceptrón y red neuronal
  
-Agregué un archivo de excel, `Peceptron Conceptro VBA.xlsm`, que ejecuta una macro, para la explicación de un perceptrón y como al repetir el proceso de manera inteligente y aplicando el descenso del gradiente se convierte en una red neuronal. La red neuronal presentada en esta hoja, tiene 4 neuronas de entrada (4 ejemplos) con 3 capas de entrada cada una (x1, x2, x3), y una capa de salida (output).
+Agregué un archivo de excel, `Peceptron Concepto VBA.xlsm`, que ejecuta una macro, para la explicación de un perceptrón y como al repetir el proceso de manera inteligente y aplicando el descenso del gradiente se convierte en una red neuronal. La red neuronal presentada en esta hoja, tiene 4 neuronas de entrada (4 ejemplos) con 3 capas de entrada cada una (x1, x2, x3), y una capa de salida (output).
 
 ## Ejemplo de una red neuronal ligeramente más compleja
 En el siguiente [LINK](https://youtu.be/MYHWuuA_XcQ?t=616) muestro ejemplos en los que se pueden usar las redes neuronales, de manera visual en un archivo excel personalizado. Claro que, para redes neuronales grandes, Excel es lento y por eso es mejor Python.
