@@ -8,7 +8,7 @@ from functions import generate_data, example_data, get_weighted_sum, sigmoid, cr
 #definition of bias, learning rate, and epochs to run
 bias = 0.5
 l_rate=0.01
-epochs = 40
+epochs = 200
 epoch_loss=[]
 
 #definition of data set lenght and number of layers
@@ -39,7 +39,7 @@ def train_model(data, weights, bias, l_rate, epochs):
         average_loss=sum(individual_loss)/len(individual_loss)
         epoch_loss.append(average_loss)
         print("********************************")
-        print("epoch: ", e)
+        print("epoch: ", e+1)
         print("loss: ", average_loss)
         print("updated weights: ", weights)
 
