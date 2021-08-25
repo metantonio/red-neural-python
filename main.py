@@ -42,7 +42,7 @@ def train_model(data, weights, bias, l_rate, epochs):
         print("epoch: ", e+1)
         print("loss: ", average_loss)
         print("updated weights: ", weights)
-    return  weights, average_loss, feature 
+    return  weights, average_loss, feature, data, target 
 
 #Running user interface and train model
 print("\n Press 1 to generate dataset and target randomly \n Press 2 to run example \n")
@@ -54,14 +54,17 @@ if (user==1):
     print("\n initial weights \n", weights)
     train_model(data, weights, bias, l_rate, epochs)
 elif (user==2):
-    print("Option 2: Example \n")
-    epochs=2000
     data, weights = example_data()
-    train_model(data, weights, bias, l_rate, epochs)
-    example = [[1,0,1]]
-    result = evaluation_neuronal(example, bias, weights)
-    print("\n If new data is: ",example)
-    print("\n Output of neuronal network should be: ", result)
+    while user==2:
+        print("Option 2: Example \n")
+        epochs=2000
+        weights, average_loss, feature, data, target = train_model(data, weights, bias, l_rate, epochs)
+        example = [[1,0,1]]
+        result = evaluation_neuronal(example, bias, weights)
+        print("\n If new data is: ",example)
+        print("\n Output of neuronal network should be: ", result)
+        user = int(input("\n Cotinuing training?: Press 2 \n Stop: Press 1 \n"))
+        
 else:
     print("\n wrong option")
 #Plot the average loss usin pandas and save plot as PDF file
