@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #import of functions.py
-from functions import generate_data, example_data, get_weighted_sum, sigmoid, cross_entropy, update_weights, update_bias
+from functions import generate_data, example_data, get_weighted_sum, sigmoid, cross_entropy, update_weights, update_bias, evaluation_neuronal
 
 #definition of bias, learning rate, and epochs to run
 bias = 0.5
@@ -42,6 +42,7 @@ def train_model(data, weights, bias, l_rate, epochs):
         print("epoch: ", e+1)
         print("loss: ", average_loss)
         print("updated weights: ", weights)
+    return  weights, average_loss, feature 
 
 #Running user interface and train model
 print("\n Press 1 to generate dataset and target randomly \n Press 2 to run example \n")
@@ -54,8 +55,12 @@ if (user==1):
     train_model(data, weights, bias, l_rate, epochs)
 elif (user==2):
     print("Option 2: Example \n")
+    epochs=1000
     data, weights = example_data()
     train_model(data, weights, bias, l_rate, epochs)
+    example = [[1,0,0]]
+    result = evaluation_neuronal(example, bias, weights)
+    print("\n salida de la red neuronal: ", result)
 else:
     print("wrong option")
 #Plot the average loss usin pandas and save plot as PDF file

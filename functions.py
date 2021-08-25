@@ -49,5 +49,9 @@ def update_weights(weights, l_rate, target, prediction, feature):
 def update_bias(bias, l_rate, target, prediction):
     return bias + l_rate*(target-prediction)
 
+def evaluation_neuronal(example, bias, weights):
+    sum_weights = get_weighted_sum(example, weights, bias)
+    return sigmoid(sum_weights)
+    
 #HERE FINISH DEFINITIONS OF FUNCTIONS
     
