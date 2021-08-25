@@ -55,16 +55,18 @@ if (user==1):
     train_model(data, weights, bias, l_rate, epochs)
 elif (user==2):
     print("Option 2: Example \n")
-    epochs=1000
+    epochs=2000
     data, weights = example_data()
     train_model(data, weights, bias, l_rate, epochs)
-    example = [[1,0,0]]
+    example = [[1,0,1]]
     result = evaluation_neuronal(example, bias, weights)
-    print("\n salida de la red neuronal: ", result)
+    print("\n If new data is: ",example)
+    print("\n Output of neuronal network should be: ", result)
 else:
-    print("wrong option")
+    print("\n wrong option")
 #Plot the average loss usin pandas and save plot as PDF file
 df = pd.DataFrame(epoch_loss)
 df_plot = df.plot(kind="line", grid=True).get_figure()
 df_plot.savefig("Training_loss.pdf")
-print("ver gráfica en pdf del error")
+print("\n ver gráfica en pdf del error en: Training_loss.pdf")
+
