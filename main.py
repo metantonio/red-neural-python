@@ -52,7 +52,7 @@ if (user==1):
     data, weights = generate_data(n_data, n_layers)
     print("\n initial data: \n", data)
     print("\n initial weights \n", weights)
-    train_model(data, weights, bias, l_rate, epochs)
+    weights, average_loss, feature, data, target = train_model(data, weights, bias, l_rate, epochs)
 elif (user==2):
     data, weights = example_data()
     while user==2:
