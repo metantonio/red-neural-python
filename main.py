@@ -42,7 +42,7 @@ def train_model(data, weights, bias, l_rate, epochs):
         print("epoch: ", e+1)
         print("loss: ", average_loss)
         print("updated weights: ", weights)
-    return  weights, average_loss, feature, data, target 
+    return  weights, average_loss, feature, data, target, epoch_loss, loss, prediction, individual_loss, w_sum 
 
 #Running user interface and train model
 print("\n Press 1 to generate dataset and target randomly \n Press 2 to run example \n")
@@ -52,13 +52,13 @@ if (user==1):
     data, weights = generate_data(n_data, n_layers)
     print("\n initial data: \n", data)
     print("\n initial weights \n", weights)
-    weights, average_loss, feature, data, target = train_model(data, weights, bias, l_rate, epochs)
+    weights, average_loss, feature, data, target, epoch_loss, loss, prediction, individual_loss, w_sum  = train_model(data, weights, bias, l_rate, epochs)
 elif (user==2):
     data, weights = example_data()
     while user==2:
         print("Option 2: Example \n")
         epochs=2000
-        weights, average_loss, feature, data, target = train_model(data, weights, bias, l_rate, epochs)
+        weights, average_loss, feature, data, target, epoch_loss, loss, prediction, individual_loss, w_sum  = train_model(data, weights, bias, l_rate, epochs)
         example = [[1,0,1]]
         result = evaluation_neuronal(example, bias, weights)
         print("\n If new data is: ",example)
