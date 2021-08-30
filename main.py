@@ -55,6 +55,7 @@ if (user==1):
     weights, average_loss, feature, data, target, epoch_loss, loss, prediction, individual_loss, w_sum  = train_model(data, weights, bias, l_rate, epochs)
 elif (user==2):
     data, weights = example_data()
+    continue_yes=input("\n Press any key to continue with training...")
     while user==2:
         print("Option 2: Example \n")
         epochs=2000
