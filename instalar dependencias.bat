@@ -15,5 +15,8 @@ python -m pip install --upgrade pip
 echo para la instalación correcta
 python3 -m pip install matplotlib --user
 
+echo ffmpeg
+pip3 install ffmpeg
+
 echo END
 PAUSE
